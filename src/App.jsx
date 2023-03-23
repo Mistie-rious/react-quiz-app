@@ -40,7 +40,7 @@ import React, { useState } from 'react'
 },
 
 {
-  questionText: "What is Mistura's favorite anime",
+  questionText: "What is Mistura's favorite anime?",
   answerOptions: [
     {answerText: 'Kaguya Sama: Love is War', isCorrect: false},
     {answerText: 'Hunter X Hunter', isCorrect: true},
@@ -85,24 +85,25 @@ const tryAgain = () =>{
 
 return (
   <div className=' bg-slate-500 w-screen  justify-center flex h-screen'>
-     <div className='bg-indigo-400 flex w-1/2 h-1/2 py-5 self-center shadow-sm   shadow-teal-200 rounded-xl object-contain text-center'>
+     <div className='bg-pink flex w-1/2 max-h-fit py-5 justify-center self-center shadow-sm shadow-beige rounded-xl object-contain text-center'>
     {showScore? (
-      <div className="">You scored {score} out of {questions.length}
-      <div className="my-9">
-      Would you like to try again?
       
-      <button onClick={tryAgain} className='hover:text-cyan-700'>Yes</button></div>
+      <div className="self-center ">You scored {score} out of {questions.length}
+      <div className="my-9">
+      
+      
+      <button onClick={tryAgain} className='hover:text-cyan-700'>RESET</button></div>
       </div> 
       
     ): (
 
 
 
-   <div className='flex flex-col justify-center flex-wrap'>
-        <div className='flex text-4xl text-blue-500 '>Question {currentQuestion + 1}/{questions.length}</div>
-        <div className='my-14 text-lg' >{questions[currentQuestion].questionText}</div>
-    <div className='flex mx-40 text-lg flex-col '>
-    {questions[currentQuestion].answerOptions.map((answerOptions) => <button  onClick={ () => whenButtonClicks(answerOptions.isCorrect)} className=' hover:bg-slate-600 bg-mine rounded-lg border-4  border-black'>{answerOptions.answerText}</button>)}
+   <div className='flex flex-col flex-wrap object-contain'>
+        <div className='flex text-4xl text-chocholatecosmos '>Question {currentQuestion + 1}/{questions.length}</div>
+        <div className=' text-lg text-white'  >{questions[currentQuestion].questionText}</div>
+    <div className='flex  text-lg flex-col '>
+    {questions[currentQuestion].answerOptions.map((answerOptions) => <button  onClick={ () => whenButtonClicks(answerOptions.isCorrect)} className='transition ease-in-out delay-75 hover:bg-slate-600 hover:scale-90 bg-mine rounded-lg border-4  w-40  border-black'>{answerOptions.answerText}</button>)}
 
     </div>
     </div>
